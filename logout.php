@@ -8,7 +8,9 @@ if (isset($_SESSION['user_id'])) {
     $username = $_SESSION['username'];
     
     // Add system log for logout
-    addSystemLog($user_id, 'LOGOUT', 'Admin user logged out: ' . $username);
+    addSystemLog($user_id, 'LOGOUT', 'User logged out: ' . $username);
+    
+    // Clear cart data from local storage (via JavaScript later)
     
     // Clear all session variables
     $_SESSION = array();

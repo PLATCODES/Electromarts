@@ -1,13 +1,13 @@
 <?php
 require_once '../includes/auth.php';
 
-// If already logged in as admin, redirect to dashboard
-if (isLoggedIn() && isAdmin()) {
+// If already logged in as user, redirect to dashboard
+if (isLoggedIn() && isUser()) {
     header('Location: dashboard.php');
     exit();
 }
 
-// If logged in but not admin, redirect to home
+// If logged in but not user, redirect to home
 if (isLoggedIn()) {
     header('Location: ../index.php');
     exit();
